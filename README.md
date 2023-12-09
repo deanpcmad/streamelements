@@ -45,6 +45,9 @@ Most of the API requires the Channel ID to be passed as an argument.
 # https://dev.streamelements.com/docs/api-docs/704e5580be2d9-channel
 @client.tips.list(channel: "channel-id")
 
+# Retrieve a Tip
+@client.tips.retrieve(channel: "channel-id", id: "tip-id")
+
 # Retrieve the Tip Tips
 # https://dev.streamelements.com/docs/api-docs/b404f906817c4-channel-top
 @client.tips.top(channel: "channel-id")
