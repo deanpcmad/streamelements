@@ -1,0 +1,31 @@
+PATH
+  remote: .
+  specs:
+    streamelements (0.1.0)
+      faraday (~> 2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    base64 (0.2.0)
+    dotenv (2.8.1)
+    faraday (2.7.12)
+      base64
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
+    minitest (5.20.0)
+    rake (13.1.0)
+    ruby2_keywords (0.0.5)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  dotenv
+  minitest (~> 5.0)
+  rake (~> 13.0)
+  streamelements!
+
+BUNDLED WITH
+   2.4.22
