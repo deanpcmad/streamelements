@@ -18,6 +18,10 @@ module StreamElements
       TipsResource.new(self)
     end
 
+    def song_requests
+      SongRequestsResource.new(self)
+    end
+
     def connection
       @connection ||= Faraday.new(BASE_URL) do |conn|
         if jwt_access_token

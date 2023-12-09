@@ -14,10 +14,12 @@ module StreamElements
 
   autoload :ActivitiesResource, "stream_elements/resources/activities"
   autoload :TipsResource, "stream_elements/resources/tips"
+  autoload :SongRequestsResource, "stream_elements/resources/song_requests"
 
   autoload :Activity, "stream_elements/objects/activity"
   autoload :TopActivity, "stream_elements/objects/top_activity"
   autoload :Tip, "stream_elements/objects/tip"
   autoload :TopTip, "stream_elements/objects/top_tip"
+  autoload :SongRequest, "stream_elements/objects/song_request"
 
 end
