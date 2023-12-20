@@ -14,28 +14,25 @@ gem "streamelements"
 
 ### Authentication
 
-Firstly you'll need to set either a JWT Token or an OAuth Access Token.
+Firstly you'll need to set a JWT Token and Channel ID.
 
 ```ruby
-# Set a JWT Token
-@client = StreamElements::Client.new(jwt_access_token: "")
-
-# Or set an OAuth Access Token
-@client = StreamElements::Client.new(access_token: "")
+StreamElements.configure do |config|
+  config.token = ENV["STREAMELEMENTS_JWT_TOKEN"]
+  config.channel = ENV["STREAMELEMENTS_CHANNEL_ID"]
+end
 ```
-
-Most of the API requires the Channel ID to be passed as an argument.
 
 ### Activities
 
 ```ruby
 # Retrieve a list of Activities
 # https://dev.streamelements.com/docs/api-docs/861a5d5450bbb-channel
-@client.activities.list(channel: "channel-id")
+StreamElements::Activity.list
 
 # Retrieve the Top Activities
 # https://dev.streamelements.com/docs/api-docs/2ce44d058b16b-channel-top
-@client.actvitities.top(channel: "channel-id")
+StreamElements::Activity.top
 ```
 
 ### Tips
@@ -43,44 +40,44 @@ Most of the API requires the Channel ID to be passed as an argument.
 ```ruby
 # Retrieve a list of Tips
 # https://dev.streamelements.com/docs/api-docs/704e5580be2d9-channel
-@client.tips.list(channel: "channel-id")
+StreamElements::Tip.list
 
 # Retrieve a Tip
-@client.tips.retrieve(channel: "channel-id", id: "tip-id")
+StreamElements::Tip.retrieve(id: "tip-id")
 
 # Retrieve the Tip Tips
 # https://dev.streamelements.com/docs/api-docs/b404f906817c4-channel-top
-@client.tips.top(channel: "channel-id")
+StreamElements::Tip.top
 ```
 
 ### Song Requests
 
 ```ruby
 # Retrieve the current playing song
-@client.song_requests.playing(channel: "channel-id")
+StreamElements::SongRequest.playing
 
 # Retrieve a list of songs in the queue
-@client.song_requests.queue(channel: "channel-id")
+StreamElements::SongRequest.queue
 
 # Retrieve a list of previous songs
-@client.song_requests.queue(channel: "channel-id")
+StreamElements::SongRequest.queue
 
 # Add a song to the queue
 # video is the YouTube video ID or URL
-@client.song_requests.add(channel: "channel-id", video: "video-id")
+StreamElements::SongRequest.add(video: "video-id")
 
 # Pause the player
-@client.song_requests.pause(channel: "channel-id")
+StreamElements::SongRequest.pause
 
 # Resume the player
-@client.song_requests.play(channel: "channel-id")
+StreamElements::SongRequest.play
 
 # Set the volume of the player
 # volume is a number between 0 and 100
-@client.song_requests.volume(channel: "channel-id", volume: 50)
+StreamElements::SongRequest.volume(volume: 50)
 
 # Skip the current song
-@client.song_requests.skip(channel: "channel-id")
+StreamElements::SongRequest.skip
 ```
 
 ## Contributing

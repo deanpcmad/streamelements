@@ -6,20 +6,26 @@ require "stream_elements/version"
 
 module StreamElements
 
+  autoload :Configuration, "stream_elements/configuration"
   autoload :Client, "stream_elements/client"
   autoload :Collection, "stream_elements/collection"
   autoload :Error, "stream_elements/error"
-  autoload :Resource, "stream_elements/resource"
   autoload :Object, "stream_elements/object"
 
-  autoload :ActivitiesResource, "stream_elements/resources/activities"
-  autoload :TipsResource, "stream_elements/resources/tips"
-  autoload :SongRequestsResource, "stream_elements/resources/song_requests"
+  class << self
+    attr_writer :config
+  end
 
-  autoload :Activity, "stream_elements/objects/activity"
-  autoload :TopActivity, "stream_elements/objects/top_activity"
-  autoload :Tip, "stream_elements/objects/tip"
-  autoload :TopTip, "stream_elements/objects/top_tip"
-  autoload :SongRequest, "stream_elements/objects/song_request"
+  def self.configure
+    yield(config) if block_given?
+  end
+
+  def self.config
+    @config ||= StreamElements::Configuration.new
+  end
+
+  autoload :Activity, "stream_elements/models/activity"
+  autoload :Tip, "stream_elements/models/tip"
+  autoload :SongRequest, "stream_elements/models/song_request"
 
 end

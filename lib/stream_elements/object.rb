@@ -3,6 +3,7 @@ require "ostruct"
 module StreamElements
   class Object < OpenStruct
     def initialize(attributes)
+      attributes["id"] = attributes.delete("_id") if attributes["_id"]
       super to_ostruct(attributes)
     end
 
