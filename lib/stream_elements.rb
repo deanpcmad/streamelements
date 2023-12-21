@@ -27,5 +27,7 @@ module StreamElements
   autoload :Activity, "stream_elements/models/activity"
   autoload :Tip, "stream_elements/models/tip"
   autoload :SongRequest, "stream_elements/models/song_request"
+  autoload :User, "stream_elements/models/user"
+  autoload :Channel, "stream_elements/models/channel"
 
 end

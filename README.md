@@ -87,6 +87,16 @@ StreamElements::SongRequest.settings
 StreamElements::SongRequest.update_settings(settings: { max_requests: 5 })
 ```
 
+### Users
+
+```ruby
+# Get the current user
+StreamElements::User.current
+
+# Get the users Channels
+StreamElements::User.channels
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/deanpcmad/streamelements.
