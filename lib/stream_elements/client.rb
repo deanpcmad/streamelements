@@ -26,6 +26,10 @@ module StreamElements
         handle_response connection.post(replace_channel(url), body, headers)
       end
 
+      def put_request(url, body: {}, headers: {})
+        handle_response connection.put(replace_channel(url), body, headers)
+      end
+
       def patch_request(url, body:, headers: {})
         handle_response connection.patch(replace_channel(url), body, headers)
       end

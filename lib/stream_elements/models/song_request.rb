@@ -17,6 +17,15 @@ module StreamElements
         Collection.from_response(response, type: SongRequest, name: "history")
       end
 
+      def settings
+        Client.get_request("songrequest/:channel/settings").body
+      end
+
+      def update_settings(settings:)
+        response = Client.put_request("songrequest/:channel/settings", body: settings)
+        response.success?
+      end
+
       def add(video:)
         SongRequest.new Client.post_request("songrequest/:channel/queue", body: { video: video }).body
       end

@@ -78,6 +78,13 @@ StreamElements::SongRequest.volume(volume: 50)
 
 # Skip the current song
 StreamElements::SongRequest.skip
+
+# Get the current song request settings
+StreamElements::SongRequest.settings
+
+# Set the current song request settings
+# settings is a hash of settings
+StreamElements::SongRequest.update_settings(settings: { max_requests: 5 })
 ```
 
 ## Contributing
