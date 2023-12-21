@@ -59,9 +59,6 @@ StreamElements::SongRequest.playing
 # Retrieve a list of songs in the queue
 StreamElements::SongRequest.queue
 
-# Retrieve a list of previous songs
-StreamElements::SongRequest.queue
-
 # Add a song to the queue
 # video is the YouTube video ID or URL
 StreamElements::SongRequest.add(video: "video-id")
