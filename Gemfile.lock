@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    streamelements (0.1.0)
+    streamelements (0.2.0)
       faraday (~> 2)
 
 GEM
