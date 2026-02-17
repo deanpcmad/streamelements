@@ -2,6 +2,7 @@
 
 require "faraday"
 require "json"
+require "ostruct"
 require "stream_elements/version"
 
 module StreamElements
